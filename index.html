@@ -2,6 +2,13 @@
 <html>
 <body>
 <h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<p id="demo"></p>
+<javascript>
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+    rand = getRandomInt(3)
+    document.getElementById("demo").innerHTML = rand;
+</javascript>
 </body>
 </html>
