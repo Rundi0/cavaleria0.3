@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Hello World</h1>
-<p id="demo"></p>
+<h1>Катафракт</h1>
+<p>Каркас:</p> <p id="frame"></p>
+<p>Реактор:</p> <p id="reactor"></p>
+<p>Ядро:</p> <p id="core"></p>
+
 <script>
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
     }
-    rand = getRandomInt(3)
-    document.getElementById("demo").innerHTML = rand;
+    function getFrame() {
+        rand = getRandomInt(6)
+        if (rand < 2) {
+            return "Скаут: Зх 15, Бр к4, Сн +1, ⬡ 500к"
+        } else if (rand < 5) {
+            return "Крейсер: Зх 13, Бр к6, Сн +3, ⬡ 750к"
+        } else if (rand < 6) {
+            return "Дредноут: Зх 11, Бр к8, Сн +6, ⬡ 1м"
+        }
+    }
+    function getReactor() {
+        rand = getRandomInt(6)
+        if (rand < 1) {
+            return "Термоядерний (к6): Сн +6, ⬡ 150к"
+        } else if (rand < 5) {
+            return "Термоядерний (к6): Сн +6, ⬡ 150к"
+        } else if (rand < 6) {
+            return "Колапсарний (к10): Сн +10, ⬡ 500к"
+        }
+    }
+    function getCore() {
+        rand = getRandomInt(6)
+        if (rand < 3) {
+            return "Старець (к6 Поколінь): Відчуженість 13, ⬡ 250к х Вік"
+        } else if (rand < 5) {
+            return "Древній (к6 Епох): Відчуженість 15, ⬡ 500к х Вік"
+        } else if (rand < 6) {
+            return "Предтеча (к6 Ер): Відчуженість 17, ⬡ 1м х Вік"
+        }
+    }
+    document.getElementById("frame").innerHTML = getFrame();
+    document.getElementById("reactor").innerHTML = getReactor();
+    document.getElementById("core").innerHTML = getCore();
 </script>
 </body>
 </html>
