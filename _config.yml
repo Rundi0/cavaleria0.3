@@ -1,6 +1,3 @@
 theme: jekyll-theme-minimal
 title: Cavaleria
 description: Generator spectra and catafracta
-
-domain: cavaleria.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
-url: https://cavaleria.github.io  # the base hostname and protocol for your site, e.g. http://example.com
