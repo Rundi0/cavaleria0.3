@@ -2,16 +2,19 @@
 <html>
 <body>
 <h1>Катафракт</h1>
-<p>Каркас: <p id="frame"></p></p> 
-<p>Реактор: <p id="reactor"></p></p> 
-<p>Ядро: <p id="core"></p></p> 
-<p>HP: <p id="hp"></p></p> 
-<p>Вади: <p id="defects"></p></p> 
-<p>Дари: <p id="gifts"></p></p> 
-<p>Початкове призначення: <p id="initial_destination"></p></p> 
-<p>Естетика: <p id="aesthetics"></p></p> 
-<p>Бойовий камуфляж: <p id="combat_camouflage"></p></p> 
-<p>Походження: <p id="origin"></p></p> 
+<h1 id="name">Катафракт</h1>
+<p>Каркас: <span id="frame"></span></p> 
+<p>Реактор: <span id="reactor"></span></p> 
+<p>Ядро: <span id="core"></span></p> 
+<p>HP: <span id="hp"></span></p> 
+<p>Вади: <span id="defects"></span></p> 
+<p>Дари: <span id="gifts"></span></p> 
+<p>Початкове призначення: <span id="initial_destination"></span></p> 
+<p>Естетика: <span id="aesthetics"></span></p> 
+<p>Бойовий камуфляж: <span id="combat_camouflage"></span></p> 
+<p>Походження: <span id="origin"></span></p> 
+<p>Всередині утроби: <span id="inside_womb"></span></p> 
+<p>Відмітини: <span id="marks"></span></p> 
 
 <script>
     function getRandomInt(max) {
@@ -168,7 +171,9 @@
             "Латаний",
             "Практичність",
         ]
-        return list_results_1[getRandomInt(6)] + list_results_2[getRandomInt(6)] + list_results_3[getRandomInt(6)]
+        return  list_results_1[getRandomInt(6)] + " " + 
+                list_results_2[getRandomInt(6)] + " " +
+                list_results_3[getRandomInt(6)]
     }
     function getCombatCamouflage() {
         list_results_1 = [
@@ -215,7 +220,8 @@
             "Кобальтових бликів",
             "Холодної сталі",
         ]
-        return "Візерунок - " + list_results_1[getRandomInt(20)] + "; У тонах - " + list_results_2[getRandomInt(20)]
+        return  "Візерунок - " + list_results_1[getRandomInt(20)] + "; " +  
+                "У тонах - " + list_results_2[getRandomInt(20)]
     }
     function getOrigin() {
         list_results = [
@@ -242,6 +248,164 @@
         ]
         return list_results[getRandomInt(20)]
     }
+    function getInsideWomb() {
+        list_results = [
+            "Засушені голови твоїх предків, підвішені над ложем",
+            "Десятки ланцюжків та разки намист з оберегами, зубами та корінням",
+            "Декілька старих жаровень для пахощів, розкладених по кутах",
+            "Сотні багряних відбитків долонь на внутрішніх стінках капсули.",
+            "Проекція тіні випаруваного Спектра на склепінні капсули",
+            "Засічки за кожну битву, в якій ти ледь розминувся зі смертю",
+            "Стара, затягана дитяча іграшка",
+            "Хронографічний знімок на згадку",
+            "Колекція дешевих сувенірних дрібничок із різних світів",
+            "Статуетки святих покровителів твого рідного світу",
+            "Пошарпана накидка для ложа пілота з сивого волосся матері",
+            "Слова старої мисливської пісні, видряпані на стінах кокона",
+            "Прозора колба з помутнілого скла з ґрунтом із дому",
+            "Муміфіковані фаланги пальців попередніх пілотів",
+            "Крихітна канарка в клітці. Далеко не перша",
+            "Дюжина дешевих ароматизаторів повітря. Без них гірше, ніж із ними",
+            "Моторошна лялька-талісман",
+            "Примітивний живопис, нанесений хною та червоною глиною",
+            "Безглузда рухлива фігурка з дивним поглядом",
+            "Синьо-чорні шовки, що огортають весь кокон",
+        ]
+        return list_results[getRandomInt(20)]
+    }
+    function getMarks() {
+        rand = getRandomInt(20)
+        if (rand < 1) {
+            result = "Морда звіра. "
+            sub_rand = getRandomInt(6)
+            if (sub_rand < 3) {
+                result += "Кархародон"
+            } else if (sub_rand < 4) {
+                result += "Князь вепрів"
+            } else if (sub_rand < 5) {
+                result += "Вовк-людоїд"
+            } else if (sub_rand < 6) {
+                result += "Лев Гілеаду"
+            }
+        } else if (rand < 2) {
+            result =    "Передсмертні слова попередніх Спектрів, всього " + 
+                        getRandomInt(6) * getRandomInt(6) * 10 
+        } else if (rand < 3) {
+            result = "Грубі жарти. "
+            sub_rand = getRandomInt(6)
+            if (sub_rand < 2) {
+                result += "приниження ворога"
+            } else if (sub_rand < 4) {
+                result += "приниження ворога"
+            } else if (sub_rand < 6) {
+                result += "вульгарна гра слів"
+            }
+        } else if (rand < 4) {
+            result = "Рахунок з відмітками за перемоги, від якого стає ніяково"
+        } else if (rand < 5) {
+            result = "Герой фольклору. "
+            sub_rand = getRandomInt(6)
+            if (sub_rand < 2) {
+                result += "Іржавий Король"
+            } else if (sub_rand < 4) {
+                result += "Вічний Пілігрим"
+            } else if (sub_rand < 6) {
+                result += "Дух-жартівник"
+            }
+        } else if (rand < 6) {
+            result = "Пророцтво мовою, яку ніхто не зміг прочитати"
+        } else if (rand < 7) {
+            result = "Символ смерті. "
+            sub_rand = getRandomInt(6)
+            if (sub_rand < 2) {
+                result += "Безликий Жнець"
+            } else if (sub_rand < 4) {
+                result += "Бражник"
+            } else if (sub_rand < 6) {
+                result += "Бенкентні Ворони"
+            }
+        } else if (rand < 8) {
+            result = "Крізь стертий камуфляж проглядаються залишки церемоніальної позолоти"
+        } else if (rand < 9) {
+            result = "Чудовисько. "
+            sub_rand = getRandomInt(6)
+            if (sub_rand < 2) {
+                result += "Черв Оорта"
+            } else if (sub_rand < 4) {
+                result += "Пожирач Зірок"
+            } else if (sub_rand < 6) {
+                result += "Оптичний Моноліт"
+            }
+        } else if (rand < 10) {
+            result = "Під сколотими шарами фарби проступає розпис стародавнього майстра"
+        } else if (rand < 11) {
+            result = "Шашка. "
+            sub_rand = getRandomInt(6)
+            if (sub_rand < 3) {
+                result += "чорно-червона"
+            } else if (sub_rand < 4) {
+                result += "жовто-чорна"
+            } else if (sub_rand < 5) {
+                result += "чорно-біла"
+            } else if (sub_rand < 6) {
+                result += "червоно-жовта"
+            }
+        } else if (rand < 12) {
+            result = "Тавро Згубника: його Спектри гинуть в Утробі без видимих причин"
+        } else if (rand < 13) {
+            result = "Діва. "
+            sub_rand = getRandomInt(6)
+            if (sub_rand < 2) {
+                result += "Плакальниця порожнечі"
+            } else if (sub_rand < 4) {
+                result += "Милостива"
+            } else if (sub_rand < 6) {
+                result += "Королева клинків"
+            }
+        } else if (rand < 14) {
+            result = "Сакральна геометрія зіркової карти, що зображує Загублений Баат"
+        } else if (rand < 15) {
+            result = "Єретичні печаті. "
+            sub_rand = getRandomInt(6)
+            if (sub_rand < 2) {
+                result += "Бог-Вигнанець"
+            } else if (sub_rand < 4) {
+                result += "Бог-Бранець"
+            } else if (sub_rand < 6) {
+                result += "Страчений Бог"
+            }
+        } else if (rand < 16) {
+            result = "Бортовий номер " + (getRandomInt(100)+1) + " останньої вцілілої машини Легіону Палаючої Зорі"
+        } else if (rand < 17) {
+            result = "Символ удачі. "
+            sub_rand = getRandomInt(6)
+            if (sub_rand < 3) {
+                result += "кості з нефриту"
+            } else if (sub_rand < 4) {
+                result += "півмісяць"
+            } else if (sub_rand < 5) {
+                result += "цвіркун"
+            } else if (sub_rand < 6) {
+                result += "падаюча зірка"
+            }
+        } else if (rand < 18) {
+            result = "Персоніфікований лик Катафракта, охоплений багряним полум’ям"
+        } else if (rand < 19) {
+            result = "Покровитель машини. "
+            sub_rand = getRandomInt(6)
+            if (sub_rand < 2) {
+                result += "Палаюча зоря"
+            } else if (sub_rand < 4) {
+                result += "Місячний птах"
+            } else if (sub_rand < 6) {
+                result += "Лілія Порожнечі"
+            }
+        } else if (rand < 20) {
+            result = "Всі позначки випарувалися, забарвлення нанесено заново, а іменний гліф спалений"
+        }
+        return result
+    }
+
 
     document.getElementById("frame").innerHTML = getFrame();
     document.getElementById("reactor").innerHTML = getReactor();
@@ -253,6 +417,8 @@
     document.getElementById("aesthetics").innerHTML = getAesthetics();
     document.getElementById("combat_camouflage").innerHTML = getCombatCamouflage();
     document.getElementById("origin").innerHTML = getOrigin();
+    document.getElementById("inside_womb").innerHTML = getInsideWomb();
+    document.getElementById("marks").innerHTML = getMarks();
 </script>
 </body>
 </html>
