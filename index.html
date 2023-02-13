@@ -17,8 +17,8 @@
 <p>Відмітини: <span id="marks"></span></p> 
 
 <script>
-    function getRandomInt(max) {
-        return Math.floor(Math.random() * max);
+    function getRandomInt(range, begin=0) {
+        return Math.floor(Math.random() * range) + begin;
     }
     function getFrame() {
         rand = getRandomInt(6)
@@ -51,7 +51,7 @@
         }
     }
     function getHP() {
-        return getRandomInt(6) + getRandomInt(6) + getRandomInt(6)
+        return getRandomInt(6,1) + getRandomInt(6,1) + getRandomInt(6,1)
     }
     function getDefects() {
         list_results = [
@@ -289,7 +289,7 @@
             }
         } else if (rand < 2) {
             result =    "Передсмертні слова попередніх Спектрів, всього " + 
-                        getRandomInt(6) * getRandomInt(6) * 10 
+                        getRandomInt(6,1) * getRandomInt(6,1) * 10 
         } else if (rand < 3) {
             result = "Грубі жарти. "
             sub_rand = getRandomInt(6)
@@ -375,7 +375,7 @@
                 result += "Страчений Бог"
             }
         } else if (rand < 16) {
-            result = "Бортовий номер " + (getRandomInt(100)+1) + " останньої вцілілої машини Легіону Палаючої Зорі"
+            result = "Бортовий номер " + (getRandomInt(100,1)) + " останньої вцілілої машини Легіону Палаючої Зорі"
         } else if (rand < 17) {
             result = "Символ удачі. "
             sub_rand = getRandomInt(6)
