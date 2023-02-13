@@ -2,7 +2,7 @@
 <html>
 <body>
 <h1>Катафракт</h1>
-<h1 id="name">Катафракт</h1>
+<h1 id="catafract_name"></h1>
 <p>Каркас: <span id="frame"></span></p> 
 <p>Реактор: <span id="reactor"></span></p> 
 <p>Ядро: <span id="core"></span></p> 
@@ -405,7 +405,160 @@
         }
         return result
     }
-
+    function getCatafractNameLoopCore() {
+        list_results_1 = [
+            "Корона",
+            "Закон",
+            "Колос",
+            "Легенда",
+            "Мародер",
+            "Загибель",
+            "Шабля",
+            "Шакал",
+            "Відлюдник",
+            "Суддя",
+            "Тиран",
+            "Тайфун",
+        ]
+        list_results_2 = [
+            "Галгалу",
+            "Маабу",
+            "Гілеаду",
+            "Каратаку",
+            "Тулле",
+            "Канаану",
+            "Ерріди",
+            "Саргону",
+            "Хоразину",
+            "Мегаріди",
+            "Кер-Ісу",
+            "Ієрихону",
+        ]
+        return  list_results_1[getRandomInt(12)] + " " + 
+                list_results_2[getRandomInt(12)]
+    }
+    function getCatafractNameBurningDawn() {
+        list_results_1 = [
+            "Фобос",
+            "Алеф",
+            "Амун",
+            "Оріон",
+            "Анку",
+            "Харон",
+            "Баал",
+            "Калібан",
+            "Гіперіон",
+            "Мардук",
+            "Теллур",
+            "Тантал",
+        ]
+        list_results_2 = [
+            "Нищівник Надії",
+            "Дві Смерті",
+            "Що Напивається Сльозами",
+            "Сталева Длань",
+            "Тричі Мерзенний",
+            "Сліпа Лють",
+            "Тисячолітній Князь",
+            "Сіятель Попелу",
+            "Мандруючий в Тінях",
+            "Чорне Полум'я",
+            "Палаюча Зірка",
+            "Принц Порожнечі",
+        ]
+        return  list_results_1[getRandomInt(12)] + " " + 
+                list_results_2[getRandomInt(12)]
+    }
+    function getCatafractNameFromSlates() {
+        list_results_1 = [
+            "Багряний",
+            "Запилений",
+            "Опівнічний",
+            "Голодний",
+            "Обсидіановий",
+            "Бурштиновий",
+            "Нефритовий",
+            "Мерехтливий",
+            "Сталевий",
+            "Древній",
+            "Малахітовий",
+            "Везучий",
+            "Палаючий",
+            "Кобальтовий",
+            "Нишпорячий",
+            "Зачаєний",
+            "Полум'яний",
+            "Тліючий",
+            "Скорботний",
+            "Лазуровий",
+            "Туманний",
+            "Пустельний",
+            "Гуркітливий",
+            "Болотний",
+            "Громовий",
+            "Тисячолітній",
+            "Полярний",
+            "Вишкірений",
+            "Червоний",
+            "Непрощений",
+            "Танцюючий",
+            "Сутінковий",
+            "Зловісний",
+            "Похмурий",
+            "Тужливий",
+            "Незворушний",
+        ]
+        list_results_2 = [
+            "Волоцюга",
+            "Владика",
+            "Ворон",
+            "Відьма",
+            "Вічність",
+            "Вдова",
+            "Воїн",
+            "Вождь",
+            "Гадюка",
+            "Грішник",
+            "Головоріз",
+            "Душогуб",
+            "Жрець",
+            "Закляття",
+            "Звір",
+            "Захисник",
+            "Знамення",
+            "Князь",
+            "Списоносець",
+            "Клинок",
+            "Цар",
+            "Левіафан",
+            "Мечоносець",
+            "Помста",
+            "Мисливець",
+            "Шахрай",
+            "Прокляття",
+            "Кат",
+            "Пророк",
+            "Рись",
+            "Вартовий",
+            "Мандрівник",
+            "Стрілець",
+            "Лють",
+            "Химера",
+            "Блазень",
+        ]
+        return  list_results_1[getRandomInt(36)] + " " + 
+                list_results_2[getRandomInt(36)]
+    }
+    function getCatafractName() {
+        rand  = getRandomInt(3)
+        if (rand < 1) {
+            return getCatafractNameLoopCore()
+        } else if (rand < 2) {
+            return getCatafractNameBurningDawn()
+        } else if (rand < 3) {
+            return getCatafractNameFromSlates()
+        }
+    }
 
     document.getElementById("frame").innerHTML = getFrame();
     document.getElementById("reactor").innerHTML = getReactor();
@@ -419,6 +572,7 @@
     document.getElementById("origin").innerHTML = getOrigin();
     document.getElementById("inside_womb").innerHTML = getInsideWomb();
     document.getElementById("marks").innerHTML = getMarks();
+    document.getElementById("catafract_name").innerHTML = getCatafractName();
 </script>
 </body>
 </html>
